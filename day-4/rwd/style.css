@@ -1,0 +1,45 @@
+body {
+  background-color: turquoise;
+}
+
+h1 {
+  font-size: 25px;
+}
+.box {
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 100%;
+}
+
+.blue {
+  width: 300px;
+  background-color: blue;
+  color: white;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  body {
+    background-color: green;
+  }
+  h1 {
+    font-size: 100px;
+  }
+}
+
+/* @media screen and (min-width: 400px) {
+  h1 {
+    font-size: 50px;
+  }
+} */
+
+.yellow {
+  width: 300px;
+  background-color: yellow;
+  color: black;
+}
+
+.red {
+  width: 300px;
+  background-color: red;
+  color: white;
+}
