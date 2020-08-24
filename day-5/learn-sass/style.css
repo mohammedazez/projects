@@ -1,0 +1,20 @@
+h1, main #list-menu {
+  border: 3px solid #5552ff;
+  background-color: salmon;
+  padding: 40px;
+  margin: 8px;
+}
+
+h1 {
+  background-color: #5552ff;
+}
+
+main #list {
+  margin: 100px 0;
+}
+
+main #list-menu {
+  font-size: 20px;
+  font-weight: 900;
+}
+/*# sourceMappingURL=style.css.map */

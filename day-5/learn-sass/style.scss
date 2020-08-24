@@ -1,0 +1,58 @@
+@import 'color';
+
+@mixin font($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+}
+
+%box-style {
+  border: 1px*3 solid $primary-color;
+  background-color: salmon;
+  padding: 20px * 2;
+  margin: 8px;
+}
+
+h1 {
+  background-color: $primary-color;
+  @extend %box-style
+}
+
+main {
+  #list {
+    margin: 100px 0;
+
+    &-menu {
+      @extend %box-style;
+      @include font(20px, 900);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
