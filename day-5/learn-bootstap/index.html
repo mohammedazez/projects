@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.5.2-dist/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md navbar-dark"
+      style="background-color: red;"
+    >
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              >Disabled</a
+            >
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- carousel -->
+      <div class="container">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://1.bp.blogspot.com/-ABtYWYCL4PU/XvjRwLF2rwI/AAAAAAAABBw/49Klyg3toiUJCK8Aopi4uYknGLa9m-RFwCK4BGAsYHg/d/Bootstrap%2B5%2BAlpha.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://jos.co.id/wp-content/uploads/2019/12/boot.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="alert alert-primary" role="alert">
+        Ini Component Alert
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <button class="btn btn-danger btn-block button-yellow">
+            ini button
+          </button>
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-outline-primary btn-lg btn-block">
+            ini button
+          </button>
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-outline-primary btn-sm btn-block">
+            ini button
+          </button>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <img
+          src="data:image/png;base64,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"
+          class="card-img-bottom"
+          alt="..."
+        />
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
