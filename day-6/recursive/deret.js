@@ -9,6 +9,7 @@ function deretKecil (n) {
     console.log(n)
   }
 }
+deretKecil(5)
 
 // 5 4 3 2 1
 function deretBesar (n) {
@@ -19,3 +20,4 @@ function deretBesar (n) {
     tampil(n-1)
   }
 }
+deretBesar(5)
