@@ -60,7 +60,12 @@ let regexMatch = /thor+iq/;
 let myName = "thoiq";
 console.log(regexMatch.test(myName));
 
+// anchor
+let regexAnchor = /^reactjs$/;
+let myText = "reactjs";
+console.log(regexAnchor.test(myText));
+
 // alternation
-let regexalter = /^reactjs$|^vuejs$/;
-let myName = "reactjs";
-console.log(regexalter.test(myName));
+let regexAlter = /^reactjs$|^vuejs$|^svelte$/;
+let myText = "reactjs";
+console.log(regexAlter.test(myText));
