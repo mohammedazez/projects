@@ -30,3 +30,6 @@ export let fruit = [
     warna: "Hijau-merah",
   },
 ];
+
+
+export let hewan = ["kucing", "tikus", "cicak", "ayam"]

@@ -37,3 +37,18 @@ String.prototype.capitalize = function (item) {
   return item;
 };
 console.log("Impact Byte".capitalize);
+
+
+
+Array.prototype.maximum = function () {
+  if (this % 2 == 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+let angka = [1,2,3]
+angka.isEven()
+
+angka.maximum()
