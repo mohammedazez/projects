@@ -38,3 +38,31 @@ const getDataUser = async (idUser) => {
   }
 };
 getDataUser(1);
+
+// fetch data using async await to poke api
+const getPikachu = async () => {
+  try {
+    let response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+    let data = await response.json();
+    console.log("pikachu", data);
+    return data;
+  } catch {
+    console.log("maaf servis sedang main tenis");
+  }
+};
+getPikachu();
+
+// fetch data using async await to api github
+
+const getDataGithub = async () => {
+  try {
+    let response = await fetch("https://api.github.com/users/imamfahr");
+    let data = await response.json();
+
+    console.log("data mas imam", data);
+  } catch {
+    console.log("maaf server sedang maintenance");
+  }
+};
+getDataGithub();
+console.log(data);
