@@ -6,18 +6,22 @@ addTodoBtn.addEventListener("click", addTodo);
 
 function addTodo() {
   console.log("tes button todo");
+  // 1. Ambil dom value
   let item = document.getElementById("todo").value;
   let completed = false;
+  // 2. Siapkan data yang mau dikirim ke backend
   let todoData = {
     item,
     completed,
   };
   console.log("todoData", todoData);
-  let todoDataJSON = JSON.stringify(todoData);
+
+  // 3. Merubah data object menjadi JSON
+  let todoDataJSON = todoData;
   console.log(todoDataJSON);
 
+  // 4. Siapin options untuk post
   let url = "https://5f51a6865e98480016123bdd.mockapi.io/todo";
-
   let options = {
     method: "POST",
     headers: {
@@ -26,6 +30,7 @@ function addTodo() {
     body: JSON.stringify(todoData),
   };
 
+  // 5. fetch bisasa sesuai dengan options
   fetch(url, options)
     .then((response) => response.json())
     .then((result) => {
