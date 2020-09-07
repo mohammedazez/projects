@@ -2,6 +2,7 @@ let allTodos = document.querySelector("#all-todos");
 
 const showTodos = async () => {
   try {
+    // proses ambil data sesuai user
     let user = JSON.parse(localStorage.getItem("user"));
     console.log(user.id);
     let response = await fetch(
@@ -9,12 +10,15 @@ const showTodos = async () => {
     );
     let data = await response.json();
     console.log(data);
+
+    // proses menampilkan datanya
     data.forEach((element) => {
       // show todo list
       let todoList = document.createElement("li");
       let todoText = document.createTextNode(`${element.todo}`);
       todoList.appendChild(todoText);
 
+      // tambah line enter
       linebreak = document.createElement("br");
       todoList.appendChild(linebreak);
 
@@ -27,25 +31,25 @@ const showTodos = async () => {
       let deleteText = document.createTextNode("delete todo");
       deleteTodo.appendChild(deleteText);
 
-      // button edit completed
-      let editCompletedBtn = document.createElement("button");
-      let editCompletedText = document.createTextNode("completed");
-      editCompletedBtn.appendChild(editCompletedText);
-
-      // button edit todo
-      let editTodo = document.createElement("button");
-      let editTodoText = document.createTextNode("Edit Todo");
-      editTodo.appendChild(editTodoText);
-
       // function untuk delete
       deleteTodo.addEventListener("click", function () {
         funcDeleteTodo(user.id, element.id);
       });
 
+      // button edit completed
+      let editCompletedBtn = document.createElement("button");
+      let editCompletedText = document.createTextNode("completed");
+      editCompletedBtn.appendChild(editCompletedText);
+
       // function untuk edit complete
       editCompletedBtn.addEventListener("click", () => {
         funcEditCompleted(user.id, element.id);
       });
+
+      // button edit todo
+      let editTodo = document.createElement("button");
+      let editTodoText = document.createTextNode("Edit Todo");
+      editTodo.appendChild(editTodoText);
 
       // function untuk edit todo
       editTodo.addEventListener("click", () => {
