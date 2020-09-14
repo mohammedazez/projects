@@ -3,6 +3,7 @@ import About from './Component/About'
 import CounterClass from "./Component/CounterClass"
 import CounterFunc from './Component/CounterFunc';
 import ListProduct from './Component/ListProduct';
+import TextInput from './Component/TextInput';
 
 // import logo from './logo.svg';
 import './App.css';
@@ -11,7 +12,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-
+      <TextInput />
       <Home name="Alpha" />
 
       <ListProduct />

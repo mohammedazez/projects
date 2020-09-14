@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+let styleDiv = {
+  backgroundColor : "gray"
+}
+
 const CounterFunc = () => {
   const [countNum, setCountNum] = useState(0)
 
@@ -8,8 +12,8 @@ const CounterFunc = () => {
   }
 
   return (
-    <div>
-      <h1>Counter Function</h1>
+    <div style={styleDiv}>
+      <h1 style={{ color: "red" }}>Counter Function</h1>
       <button onClick={decrement}>-</button>
       <h1 style={{ display: "inline" }}>{countNum}</h1>
       <button>+</button>
