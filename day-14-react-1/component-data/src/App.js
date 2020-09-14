@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import About from './Component/About'
-import Counter from "./Component/Counter"
+import CounterClass from "./Component/CounterClass"
+import CounterFunc from './Component/CounterFunc';
 import ListProduct from './Component/ListProduct';
 
 // import logo from './logo.svg';
@@ -21,7 +22,9 @@ function App() {
         age={20}
       />
 
-      <Counter />
+      <CounterClass />
+      <CounterFunc />
+      
 
     </div>
   );

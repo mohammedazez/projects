@@ -8,7 +8,7 @@ const ListProduct = () => {
     <div>
       <Product nama="buku" harga={4000} />
       <Product nama="pensil" harga={2000}/>
-      <Product nama="penggaris" harga={3000}/>
+      {/* <Product nama="penggaris" harga={3000}/> */}
     </div>
   );
 }
