@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import About from './Component/About'
+import Counter from "./Component/Counter"
+import ListProduct from './Component/ListProduct';
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
 // Function component
 function App() {
-  let user = {
-    name:"Auzan",
-    email:"auzanassidqi@gmail.com",
-    age:20
-  }
-
   return (
     <div className="App">
 
       <Home name="Alpha" />
-      <Home name="Beta" />
-      <Home name="Charli" />
+
+      <ListProduct />
 
       <About 
-        user={user}
-        // name="Auzan" 
-        // email="auzanassidqi@gmail.com"
-        // age={20}
+        name="Auzan" 
+        email="auzanassidqi@gmail.com"
+        age={20}
       />
+
+      <Counter />
 
     </div>
   );
 }
 
+// stateless Component
 class Home extends Component{
   render(){
     return(
