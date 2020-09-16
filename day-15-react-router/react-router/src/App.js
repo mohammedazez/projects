@@ -1,6 +1,8 @@
 import React from "react";
-import "./App.css";
+import Todo from './pages/Todo'
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+import "./App.css";
 
 // pages
 import Home from "./pages/Home";
@@ -18,6 +20,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
+
+        <Todo />
+
         {/* bagian halaman yang mau dirubah */}
         <Switch>
           <Route exact path="/">
