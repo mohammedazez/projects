@@ -33,7 +33,7 @@ function App() {
             <Users />
           </Route>
           <Route path="/dashboard">
-            {loggedIn ? <Dashboard /> : <Redirect to="/about" />}
+            {loggedIn ? <Dashboard /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </div>
