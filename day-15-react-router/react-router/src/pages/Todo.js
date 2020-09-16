@@ -23,19 +23,12 @@ const Todo = () => {
     event.preventDefault()
 
     let newTodo = {
+      id: 1,
       todo: inputText 
     }
 
-    if (todos.length === 0) {
-      newTodo = {
-        id: 1, 
-        ...newTodo
-      }
-    } else {
-      newTodo = {
-        id: todos[todos.length-1].id + 1, 
-        ...newTodo
-      }
+    if (todos.length > 0) {
+      newTodo.id = todos[todos.length-1].id + 1
     }
 
     setTodos([...todos, newTodo])
