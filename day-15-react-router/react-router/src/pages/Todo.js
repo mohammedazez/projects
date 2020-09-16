@@ -1,29 +1,63 @@
 import React, { useState } from 'react';
 
 const Todo = () => {
+
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([ "belajar react", "membuat todos" ])
+  const [todos, setTodos] = useState([ 
+    {id:1, todo: "membuat todos"},
+    {id:2, todo: "belajar state"},
+    {id:3, todo: "tes todos"},
+    {id:4, todo: "belajar react"}, 
+  ])
 
   const handleChange = (event) => {
     setInputText(event.target.value)
   }
 
-  const addTodo = () => {
-    setTodos([...todos, inputText])
+  const addTodo = (event) => {
+    event.preventDefault()
+
+    let newTodo = {
+      id: 1,
+      todo: inputText 
+    }
+
+    if (todos.length !== 0) {
+      newTodo = {
+        id: todos[todos.length-1].id + 1, ...newTodo
+      }
+    }
+
+    setTodos([...todos, newTodo])
     setInputText("")
   }
 
-  console.log(inputText)
+  const deleteTodo = (itemDel) => {
+    let newTodos = todos.filter((item) => (item.id !== itemDel.id))
+
+    setTodos(newTodos)
+    console.log(newTodos)
+  }
+
   console.log(todos)
 
   return (
     <div>
       <h1>TODO APP</h1>
-      <input type="text" onChange={handleChange} value={inputText} />
-      <button onClick={addTodo}>ADD</button>
+
+      <form action="">
+
+        <input type="text" onChange={handleChange} value={inputText} />
+        <button onClick={addTodo}>ADD</button>
+
+      </form>
+
       <ul>
-        {todos.map( (item, index) => (
-          <li key={index}>{item}</li>
+        {todos.map((item) => (
+          <div key={item.id}>
+            <li style={{display: "inline"}}>{item.todo}</li>
+            <button onClick={() => {deleteTodo(item)}}>x</button>
+          </div>
         ))}
       </ul>
     </div>
