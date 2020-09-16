@@ -10,21 +10,31 @@ const Todo = () => {
     {id:4, todo: "belajar react"}, 
   ])
 
+  // Menangani perubahan pada text input
   const handleChange = (event) => {
     setInputText(event.target.value)
   }
 
+  // Menambahkan todo
   const addTodo = (event) => {
+
+    // button di dlm form akan melakukan refresh
+    // kasih prevent default biar ga nge refresh
     event.preventDefault()
 
     let newTodo = {
-      id: 1,
       todo: inputText 
     }
 
-    if (todos.length !== 0) {
+    if (todos.length === 0) {
       newTodo = {
-        id: todos[todos.length-1].id + 1, ...newTodo
+        id: 1, 
+        ...newTodo
+      }
+    } else {
+      newTodo = {
+        id: todos[todos.length-1].id + 1, 
+        ...newTodo
       }
     }
 
@@ -32,6 +42,7 @@ const Todo = () => {
     setInputText("")
   }
 
+  // Menghapus todo
   const deleteTodo = (itemDel) => {
     let newTodos = todos.filter((item) => (item.id !== itemDel.id))
 
@@ -45,11 +56,9 @@ const Todo = () => {
     <div>
       <h1>TODO APP</h1>
 
-      <form action="">
-
+      <form>
         <input type="text" onChange={handleChange} value={inputText} />
         <button onClick={addTodo}>ADD</button>
-
       </form>
 
       <ul>
