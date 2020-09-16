@@ -16,6 +16,9 @@ function Header() {
           <div>
             <Link to="/contact">Contact</Link>
           </div>
+          <div>
+            <Link to="/users">Users</Link>
+          </div>
         </ul>
       </nav>
     </div>
