@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const About = (props) => {
-  console.log(props)
+  // console.log(props)
 
   return (
     <div>
@@ -11,7 +11,6 @@ const About = (props) => {
       <h3>{props.age}</h3>
     </div>
   );
-}
+};
 
 export default About;
-

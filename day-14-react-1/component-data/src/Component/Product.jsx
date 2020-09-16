@@ -1,13 +1,25 @@
-import React from 'react';
+import React from "react";
 
-const Product = (props) => {
+const Product = ({ eat, minum }) => {
+  // props adalah state yang sudah diturunkan
+  // console.log(props);
   return (
     <div>
-      <h3>{props.nama}</h3>
-      <h3>{props.harga}</h3>
-      <hr/>
+      <h1>Component product</h1>
+      {/* {props.makanan.map((item) => (
+        <div>
+          <h1>{item.nama}</h1>
+        </div>
+      ))} */}
+      {eat.map((item) => (
+        <div>
+          <p>{item.nama}</p>
+          <p>{item.harga}</p>
+        </div>
+      ))}
+      <p>{minum}</p>
     </div>
   );
-}
+};
 
 export default Product;
