@@ -22,13 +22,16 @@ function App() {
       <div className="App">
         <Header />
 
-        <Form/>
-        <Todo />
-
         {/* bagian halaman yang mau dirubah */}
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/todo">
+            <Todo />
+          </Route>
+          <Route path="/form">
+            <Form />
           </Route>
           <Route path="/contact">
             <Contact />
@@ -43,6 +46,10 @@ function App() {
             {loggedIn ? <Dashboard /> : <Redirect to="/" />}
           </Route>
         </Switch>
+
+        <br/>
+        <small>cek console log untuk melihat perubahan data</small>
+
       </div>
     </BrowserRouter>
   );

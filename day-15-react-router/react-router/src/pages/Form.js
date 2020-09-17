@@ -7,6 +7,8 @@ const Form = () => {
     {isChecked:false, label: "Bike"},
   ]);
 
+  const [gender, setGender] = useState("M")
+
   const handleCheck = (itemCheckBox) => {
     itemCheckBox.isChecked = !itemCheckBox.isChecked
   
@@ -16,20 +18,34 @@ const Form = () => {
   }
 
   console.log(checkBoxData)
-  
+  console.log(gender)
+
   return (
     <div>
-        <form action="">
+        <form>
+          <h1>Form</h1>
+          {/* Checkbox */}
+          <label htmlFor="">Vehicle</label><br/>
           {checkBoxData.map((item, index) => (
             <div key={index}>
               <input 
                 onChange={() => handleCheck(item)} 
                 type="checkbox" 
-                name="vehicle1" 
-                checked={item.isCheked} />
+                name="vehicle1"
+                defaultChecked={item.isChecked} />
               <label>{item.label}</label><br />
             </div>
           ))}
+        <br/>
+
+        {/* Radio */}
+        <label>Gender</label><br/>
+        <input type="radio" checked={gender === 'M'} onChange={() => setGender('M')} />
+        <label htmlFor="">Male</label><br/>
+
+        <input type="radio" checked={gender === 'F'} onChange={() => setGender('F')} />
+        <label htmlFor="">Female</label>
+
       </form>
     </div>
   );
