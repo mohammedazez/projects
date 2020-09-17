@@ -13,6 +13,7 @@ import Users from "./pages/Users";
 // components
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
+import Form from "./pages/Form";
 
 function App() {
   let loggedIn = true;
@@ -21,6 +22,7 @@ function App() {
       <div className="App">
         <Header />
 
+        <Form/>
         <Todo />
 
         {/* bagian halaman yang mau dirubah */}
