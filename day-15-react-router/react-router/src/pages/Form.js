@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const Form = () => {
   const [checkBoxData, setCheckBoxData] = useState([
-    {name: "vehicle1", isChecked:false, label: "Boat"},
-    {name: "vehicle2", isChecked:false, label: "Car"},
-    {name: "vehicle3", isChecked:false, label: "Bike"},
+    {isChecked:false, label: "Boat"},
+    {isChecked:false, label: "Car"},
+    {isChecked:false, label: "Bike"},
   ]);
 
   const handleCheck = (itemCheckBox) => {
@@ -22,7 +22,11 @@ const Form = () => {
         <form action="">
           {checkBoxData.map((item, index) => (
             <div key={index}>
-              <input onChange={() => handleCheck(item)} type="checkbox" name="vehicle1" defaultValue="Bike" checked={item.isCheked} />
+              <input 
+                onChange={() => handleCheck(item)} 
+                type="checkbox" 
+                name="vehicle1" 
+                checked={item.isCheked} />
               <label>{item.label}</label><br />
             </div>
           ))}
