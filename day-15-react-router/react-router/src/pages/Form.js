@@ -17,8 +17,8 @@ const Form = () => {
     setCheckBoxData(newData)
   }
 
-  console.log(checkBoxData)
-  console.log(gender)
+  console.log("Vehicle", checkBoxData)
+  console.log("Gender", gender)
 
   return (
     <div>
