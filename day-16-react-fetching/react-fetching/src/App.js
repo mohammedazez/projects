@@ -1,6 +1,7 @@
 import React from "react";
-import "./App.css";
-import Users from "./pages/Users";
+import "./styling/App.scss";
+// import Users from "./pages/Users";
+import NewPage from "./pages/NewPage";
 
 function App() {
   // const [data, setData] = useState("posts");
@@ -50,7 +51,8 @@ function App() {
         <button>+</button>
         <hr />
       </div> */}
-      <Users />
+      {/* <Users /> */}
+      <NewPage />
     </div>
   );
 }
