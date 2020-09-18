@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styling/App.scss";
 // import Users from "./pages/Users";
 import NewPage from "./pages/NewPage";
 
