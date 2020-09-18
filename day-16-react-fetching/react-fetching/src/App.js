@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 function App() {
@@ -9,18 +10,23 @@ function App() {
   const decrement = () => {
     setCountNum(countNum - 1);
   };
+
   // rules 1 = setiap react render ulang useEffect dipanggil / state berubah
   // dengan ditambahkan [] setelah fetch berarti kita hanya watch / subscribe ke perubahan data tersebut saja
+  // useEffect(() => {
+  //   console.log("mounting");
+  //   fetch(`https://jsonplaceholder.typicode.com/${data}`)
+  //     .then((response) => response.json())
+  //     // .then((result) => setRender(result));
+  // }, [data]);
+
   useEffect(() => {
-    console.log("mounting");
-    fetch(`https://jsonplaceholder.typicode.com/${data}`)
-      .then((response) => response.json())
-      .then((result) => setRender(result));
+    console.log("looping");
+    axios
+      .get(`https://jsonplaceholder.typicode.com/${data}`)
+      .then((response) => setRender(response.data));
   }, [data]);
 
-  // useEffect(() => {
-  //   effect
-  // }, [input])
   return (
     <div className="App">
       <h1>React Fetching data</h1>
