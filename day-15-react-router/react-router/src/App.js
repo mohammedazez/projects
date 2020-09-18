@@ -13,6 +13,7 @@ import Users from "./pages/Users";
 // components
 import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
+import Form from "./pages/Form";
 
 function App() {
   let loggedIn = true;
@@ -21,12 +22,16 @@ function App() {
       <div className="App">
         <Header />
 
-        <Todo />
-
         {/* bagian halaman yang mau dirubah */}
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/todo">
+            <Todo />
+          </Route>
+          <Route path="/form">
+            <Form />
           </Route>
           <Route path="/contact">
             <Contact />
@@ -41,6 +46,10 @@ function App() {
             {loggedIn ? <Dashboard /> : <Redirect to="/" />}
           </Route>
         </Switch>
+
+        <br/>
+        <small>cek console log untuk melihat perubahan data</small>
+
       </div>
     </BrowserRouter>
   );
