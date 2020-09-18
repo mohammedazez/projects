@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./App.css";
+import Users from "./pages/Users";
 
 function App() {
-  const [data, setData] = useState("posts");
-  const [render, setRender] = useState([]);
-  const [countNum, setCountNum] = useState(0);
+  // const [data, setData] = useState("posts");
+  // const [render, setRender] = useState([]);
+  // const [countNum, setCountNum] = useState(0);
 
-  const decrement = () => {
-    setCountNum(countNum - 1);
-  };
+  // const decrement = () => {
+  //   setCountNum(countNum - 1);
+  // };
 
   // rules 1 = setiap react render ulang useEffect dipanggil / state berubah
   // dengan ditambahkan [] setelah fetch berarti kita hanya watch / subscribe ke perubahan data tersebut saja
@@ -20,17 +20,17 @@ function App() {
   //     // .then((result) => setRender(result));
   // }, [data]);
 
-  useEffect(() => {
-    console.log("looping");
-    axios
-      .get(`https://jsonplaceholder.typicode.com/${data}`)
-      .then((response) => setRender(response.data));
-  }, [data]);
+  // useEffect(() => {
+  //   console.log("looping");
+  //   axios
+  //     .get(`https://jsonplaceholder.typicode.com/${data}`)
+  //     .then((response) => setRender(response.data));
+  // }, [data]);
 
   return (
     <div className="App">
       <h1>React Fetching data</h1>
-      <div>
+      {/* <div>
         <button onClick={() => setData("posts")}>Posts</button>
         <button onClick={() => setData("users")}>Users</button>
         <button onClick={() => setData("comments")}>Comments</button>
@@ -49,7 +49,8 @@ function App() {
         <h1 style={{ display: "inline" }}>{countNum}</h1>
         <button>+</button>
         <hr />
-      </div>
+      </div> */}
+      <Users />
     </div>
   );
 }
