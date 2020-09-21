@@ -13,6 +13,7 @@ function Header() {
         <Link to="/todo">Todo</Link>
         <Link to="/form">Form</Link>
       </nav>
+      <hr/>
     </div>
   );
 }
