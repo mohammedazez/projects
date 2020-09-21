@@ -18,4 +18,4 @@ const mapStateToProps = ({ counter }) => {
   };
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, null)(Header);
