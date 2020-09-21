@@ -1,7 +1,7 @@
 import { INCREMENT, DECREMENT } from "../actions/counter.actions";
 
 const initialState = {
-  counter: 0,
+  counter: 990,
 };
 
 const counter = (state = initialState, action) => {
