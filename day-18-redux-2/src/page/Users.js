@@ -30,10 +30,10 @@ function Users(props) {
 }
 
 const mapStateToProps = (props) => {
-  // console.log("props", props);
+  console.log("props", props);
   return {
-    users: props.data,
-    isLoading: props.isLoading,
+    users: props.users.data,
+    isLoading: props.users.isLoading,
   };
 };
 

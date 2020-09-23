@@ -10,7 +10,7 @@ const initialState = {
   isLoading: false,
 };
 
-function getUserReducer(state = initialState, action) {
+export function getUserReducer(state = initialState, action) {
   switch (action.type) {
     case GET_USERS_REQUEST:
       // console.log("request", action);
@@ -36,4 +36,4 @@ function getUserReducer(state = initialState, action) {
   }
 }
 
-export default getUserReducer;
+// export default getUserReducer;
