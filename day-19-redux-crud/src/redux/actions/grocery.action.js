@@ -47,3 +47,14 @@ export const postGroceryActions = (data, e) => {
       });
   };
 };
+
+export const deleteGroceryActions = (id) => {
+  return (dispatch) => {
+    axios
+      .delete(`https://5f51a6865e98480016123bdd.mockapi.io/grocery/${id}`)
+      .then((response) => {
+        console.log("response", response);
+        dispatch(getGroceryActions());
+      });
+  };
+};

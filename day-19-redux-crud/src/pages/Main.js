@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logout from "../components/Logout";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
@@ -8,6 +8,7 @@ import {
   editGroceryActions,
   getGroceryActions,
   postGroceryActions,
+  deleteGroceryActions,
 } from "../redux/actions/grocery.action";
 
 function Main() {
@@ -59,7 +60,9 @@ function Main() {
           <div key={index}>
             <h4>{item.name}</h4>
             <button onClick={() => handleEdit(item.id, item.name)}>Edit</button>
-            <button>Delete</button>
+            <button onClick={() => dispatch(deleteGroceryActions(item.id))}>
+              Delete
+            </button>
           </div>
         ))
       ) : (
