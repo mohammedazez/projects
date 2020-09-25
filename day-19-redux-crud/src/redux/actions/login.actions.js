@@ -1,8 +1,7 @@
 export const GET_GOOGLE = "GET_GOOGLE";
+export const LOGOUT_GOOGLE = "LOGOUT_GOOGLE";
 
 export const getGoogle = (data, history) => {
-  console.log("actions data", data);
-
   if (data.profileObj !== undefined) {
     console.log("masukkk");
     localStorage.setItem("isLoggedIn", true);
@@ -20,6 +19,10 @@ export const getGoogle = (data, history) => {
   };
 };
 
-// export const logoutGoogle = () => {
-
-// }
+export const logoutGoogle = (history) => {
+  history.push("/");
+  localStorage.clear();
+  return {
+    type: LOGOUT_GOOGLE,
+  };
+};
