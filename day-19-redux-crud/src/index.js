@@ -3,9 +3,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 
+import { Provider } from "react-redux";
+import storeReduducers from "./redux/store";
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={storeReduducers}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );

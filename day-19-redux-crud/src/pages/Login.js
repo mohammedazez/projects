@@ -1,9 +1,13 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
+import { useDispatch } from "react-redux";
+import { getGoogle } from "../redux/actions/login.actions";
 
 function Login() {
+  const dispatch = useDispatch();
   const responseGoogleLogin = (response) => {
     console.log(response);
+    dispatch(getGoogle(response));
   };
   return (
     <div>
