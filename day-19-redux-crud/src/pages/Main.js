@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   editGroceryActions,
   getGroceryActions,
+  postGroceryActions,
 } from "../redux/actions/grocery.action";
 
 function Main() {
@@ -28,12 +29,31 @@ function Main() {
     dispatch(editGroceryActions(dataEdit, id));
   };
 
+  // state
+  const [grocery, setGrocery] = useState("");
+
   return (
     <div>
       <h1>Halaman main</h1>
       <Logout />
 
       <h1>Grocery List</h1>
+
+      <form
+        onSubmit={(e) => {
+          dispatch(postGroceryActions(grocery, e));
+          setGrocery("");
+        }}
+      >
+        <input
+          type="text"
+          name="grocery"
+          value={grocery}
+          onChange={(e) => setGrocery(e.target.value)}
+        />
+        <button>Add Grocery</button>
+      </form>
+
       {listGrocery !== undefined ? (
         listGrocery.map((item, index) => (
           <div key={index}>

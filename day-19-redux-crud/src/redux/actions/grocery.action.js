@@ -33,3 +33,17 @@ export const editGroceryActions = (data, id) => {
       });
   };
 };
+
+export const postGroceryActions = (data, e) => {
+  e.preventDefault();
+  return (dispatch) => {
+    axios
+      .post("https://5f51a6865e98480016123bdd.mockapi.io/grocery/", {
+        name: data,
+      })
+      .then((response) => {
+        console.log("response", response);
+        dispatch(getGroceryActions());
+      });
+  };
+};
