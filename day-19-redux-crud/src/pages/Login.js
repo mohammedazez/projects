@@ -8,6 +8,7 @@ import { getGoogle } from "../redux/actions/login.actions";
 function Login() {
   const dispatch = useDispatch();
   const history = useHistory();
+  // console.log(history);
 
   const responseGoogleLogin = (response) => {
     console.log(response);
@@ -22,7 +23,6 @@ function Login() {
         onSuccess={responseGoogleLogin}
         onFailure={responseGoogleLogin}
         cookiePolicy={"single_host_origin"}
-        // isSignedIn={true}
       />
     </div>
   );
