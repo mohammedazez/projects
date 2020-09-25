@@ -1,13 +1,17 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 import { getGoogle } from "../redux/actions/login.actions";
 
 function Login() {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const responseGoogleLogin = (response) => {
     console.log(response);
-    dispatch(getGoogle(response));
+    dispatch(getGoogle(response, history));
   };
   return (
     <div>
@@ -18,7 +22,7 @@ function Login() {
         onSuccess={responseGoogleLogin}
         onFailure={responseGoogleLogin}
         cookiePolicy={"single_host_origin"}
-        isSignedIn={true}
+        // isSignedIn={true}
       />
     </div>
   );

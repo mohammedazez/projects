@@ -1,9 +1,14 @@
 export const GET_GOOGLE = "GET_GOOGLE";
 
-export const getGoogle = (data) => {
+export const getGoogle = (data, history) => {
   console.log("actions data", data);
 
-  // localStorage
+  if (data.profileObj !== undefined) {
+    console.log("masukkk");
+    localStorage.setItem("isLoggedIn", true);
+    history.push("/main");
+  }
+
   return {
     type: GET_GOOGLE,
     payload: {
@@ -14,3 +19,7 @@ export const getGoogle = (data) => {
     },
   };
 };
+
+// export const logoutGoogle = () => {
+
+// }
