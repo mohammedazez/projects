@@ -18,6 +18,7 @@ function Login() {
         onSuccess={responseGoogleLogin}
         onFailure={responseGoogleLogin}
         cookiePolicy={"single_host_origin"}
+        isSignedIn={true}
       />
     </div>
   );
