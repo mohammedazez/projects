@@ -1,5 +1,6 @@
 const {Sequelize, INTEGER} = require('sequelize');
 const sequelize = require('../config/db');
+const Exschool = require('./Exschool');
 
 const User = sequelize.define("users", {
   name: Sequelize.STRING,
@@ -10,5 +11,6 @@ const User = sequelize.define("users", {
   underscored: true,
   timestamps: false
 })
+User.belongsTo(Exschool)
 
 module.exports = User

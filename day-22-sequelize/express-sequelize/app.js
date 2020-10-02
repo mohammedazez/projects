@@ -3,6 +3,8 @@ const sequelize = require('./config/db');
 
 const User = require('./models/User');
 const Teacher = require('./models/Teacher');
+const Exschool = require('./models/Exschool');
+
 
 const userRouter = require('./routes/user');
 
@@ -14,6 +16,7 @@ sequelize
   console.log("Connection has been established successfully.")
   User.sync()
   Teacher.sync()
+  Exschool.sync()
 })
 .catch(err => {
   console.log('Unable to connect to the database:', err)
