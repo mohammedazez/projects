@@ -6,7 +6,7 @@ const ClassRoomSchema = new mongoose.Schema({
     required: true
   },
   teacher: String,
-  floor: Number
+  floor: Number,
 })
 
 const ClassRoom = mongoose.model("class-room", ClassRoomSchema)
