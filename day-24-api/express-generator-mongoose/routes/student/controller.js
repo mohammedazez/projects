@@ -29,6 +29,20 @@ module.exports = {
     }
   },
 
+  getStudentInClass: async (req, res) => {
+    const students = await Student.find({class: req.params.id});
+  
+    try {
+      res.json({
+        message: "success get student in class",
+        students
+      });
+    } catch (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
+  },
+
   postStudent: async (req, res) => {
     // console.log("Student", Student);
     const students = await Student.create(req.body);

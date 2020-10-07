@@ -1,6 +1,9 @@
+// require('dotenv').config()
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/school', {
+const URI = process.env.DB_LIVE || 'mongodb://localhost/school'
+
+mongoose.connect(URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
