@@ -3,15 +3,25 @@ const Student = require("../models/Student");
 const app = express();
 
 app.get("/student", async (req, res) => {
-  console.log("student", Student);
-  const students = await Student.find({});
+  // const students = await Student.find({}).populate("class-rooms")
+  // console.log("student", students);
 
-  try {
-    res.send(students);
-  } catch (err) {
+  Student.find()
+  .select("-__v")
+  .populate("class")
+  .then(result => {
+    res.json(result);
+  })
+  .catch(err => {
     console.log(err);
-    res.status(500).send(err);
-  }
+  })
+
+  // try {
+  //   res.send(students);
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).send(err);
+  // }
 });
 
 app.get("/student/:id", async (req, res) => {

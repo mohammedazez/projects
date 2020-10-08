@@ -6,7 +6,8 @@ const StudentSchema = new mongoose.Schema({
     required: true,
   },
   class: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "class-room"
   },
   // dateRegister: {
   //   type: Date,
@@ -15,4 +16,5 @@ const StudentSchema = new mongoose.Schema({
 });
 
 const Student = mongoose.model("students", StudentSchema);
+
 module.exports = Student;

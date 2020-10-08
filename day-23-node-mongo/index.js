@@ -7,9 +7,10 @@ const localPort = PORT || 9000;
 
 const { dbMongo } = require("./config");
 const studentRouter = require("./routes/StudentController");
+const classRoomRouter = require("./routes/ClassRoomController");
 
 console.log("port", PORT);
-console.log("MONGODB_URI_LIVE", MONGODB_URI_LIVE);
+// console.log("MONGODB_URI_LIVE", MONGODB_URI_LIVE);
 // console.log("db", dbMongo);
 
 app.use(bodyParser.json());
@@ -18,6 +19,11 @@ app.get("/", (req, res) => {
 });
 
 app.use(studentRouter);
+app.use(classRoomRouter);
+
+app.use(() => {
+  console.log("halooooooo");
+})
 
 if (dbMongo) {
   app.listen(localPort, () => {
