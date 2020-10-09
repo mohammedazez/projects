@@ -1,5 +1,7 @@
 require("dotenv").config()
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
 const {Student} = require('../../models');
 
 module.exports = {
@@ -46,13 +48,24 @@ module.exports = {
   },
 
   postStudent: async (req, res) => {
-    // console.log("Student", Student);
-    const students = await Student.create(req.body);
+    // console.log("Student", Student
+
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(req.body.password, salt);
+
+    let student = {
+      ...req.body,
+      password: hash
+    }
+    console.log(student)
+
+    student = await Student.create(student);
+
     // console.log("students", students);
     try {
       res.json({
         message: "success add data student",
-        students
+        student
       });
     } catch (err) {
       console.log(err);
@@ -62,17 +75,22 @@ module.exports = {
 
   loginStudent: async (req, res) => {
     try {
-      const student = await Student.findOne({name: req.body.name})
-      console.log(student)
-      console.log(process.env.SECRET_KEY)
+      const student = await Student.findOne({email: req.body.email})
+      if (student) {
+        const pass = bcrypt.compareSync(req.body.password, student.password)
+        if (pass){
 
+          const token = jwt.sign(student.toObject(), process.env.SECRET_KEY)
+          res.json({
+            message: "login success",
+            token
+          })
 
-      if (student){
-        const token = jwt.sign(student.toObject(), process.env.SECRET_KEY)
-        res.json({
-          message: "login success",
-          token
-        })
+        } else {
+          res.json("wrong password")
+        }
+      } else {
+        res.json("user not found")
       }
     } catch (err) {
       console.log(err)

@@ -10,14 +10,18 @@ module.exports = {
 
     if (token == null) return res.json("missing token")
 
-    const isTokenValid = jwt.verify(token, process.env.SECRET_KEY)
-    console.log("ISI TOKEN", isTokenValid)
+    try {
+      const isTokenValid = jwt.verify(token, process.env.SECRET_KEY)
+      console.log("ISI TOKEN", isTokenValid)
+      if (isTokenValid) {
+        let {password, ...rest} = isTokenValid
 
-    if (isTokenValid) {
-      req.body = isTokenValid
-      next()
-    } else {
+        req.body = rest
+        next()
+      }
+    } catch (error) {
       res.json("token is not valid")
+      console.log("token is not valid");
     }
     // "Bearer xxxxxxx"
   }

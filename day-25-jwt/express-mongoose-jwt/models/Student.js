@@ -5,6 +5,7 @@ const StudentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  email: String,
   password: String,
   class: {
     type: mongoose.Schema.Types.ObjectId,
