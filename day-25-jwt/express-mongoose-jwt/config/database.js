@@ -1,13 +1,13 @@
-// require('dotenv').config()
-const mongoose = require('mongoose');
+require("dotenv").config();
+const mongoose = require("mongoose");
 
-const URI = 'mongodb://localhost/school'
+const URI = process.env.DB_LIVE || "mongodb://localhost/school";
 
 mongoose.connect(URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
 
-module.exports = db
+module.exports = db;
