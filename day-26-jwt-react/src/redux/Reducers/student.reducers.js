@@ -17,7 +17,8 @@ const initialState = token
 // reducers student
 
 const student = (state = initialState, action) => {
-  console.log("tes", action);
+  // console.log("tes", action);
+  // console.log("data", action.payload);
   switch (action.type) {
     case REGISTER:
       return {
