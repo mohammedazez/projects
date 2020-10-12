@@ -7,7 +7,7 @@ function Register() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [register, setRegister] = useState({
+  const [registerState, setRegisterState] = useState({
     email: "",
     password: "",
     name: "",
@@ -20,8 +20,8 @@ function Register() {
   //handle change form
   const handleChange = (event) => {
     // console.log("event", event);
-    setRegister({
-      ...register,
+    setRegisterState({
+      ...registerState,
       [event.target.name]: event.target.value,
     });
   };
@@ -41,34 +41,34 @@ function Register() {
   //     });
   // };
 
-  console.log("register", register);
+  console.log("register", registerState);
   return (
     <div>
       <h1>Register Page</h1>
       <form
         onSubmit={(event) => {
-          dispatch(registerActions(register, event, history));
+          dispatch(registerActions(registerState, event, history));
         }}
       >
         {/* <form onSubmit={(event) => handleSubmit(event)}></form> */}
         <input
           type="email"
           name="email"
-          value={register.email}
+          value={registerState.email}
           placeholder="masukan email anda"
           onChange={(event) => handleChange(event)}
         />
         <input
           type="password"
           name="password"
-          value={register.password}
+          value={registerState.password}
           placeholder="masukan password anda"
           onChange={(event) => handleChange(event)}
         />
         <input
           type="text"
           name="name"
-          value={register.name}
+          value={registerState.name}
           placeholder="masukan nama anda"
           onChange={(event) => handleChange(event)}
         />
